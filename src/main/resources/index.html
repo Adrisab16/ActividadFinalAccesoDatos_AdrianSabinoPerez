@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+</head>
+<body>
+
+<h1>Menu Principal</h1>
+
+<button onclick="mostrarSubMenu('agregar')">Agregar</button>
+<button onclick="mostrarSubMenu('actualizar')">Actualizar</button>
+<button onclick="mostrarSubMenu('eliminar')">Eliminar</button>
+<button onclick="mostrarSubMenu('leer')">Leer</button>
+
+<div id="submenu-container"></div>
+
+<script>
+    function mostrarSubMenu(operacion) {
+        const submenuContainer = document.getElementById('submenu-container');
+        submenuContainer.innerHTML = ''; // Limpiar el contenedor
+
+        // Cargar el contenido del submenu según la operación
+        const url = '/submenu/' + operacion;
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                submenuContainer.innerHTML = html;
+            });
+    }
+</script>
+</body>
+</html>

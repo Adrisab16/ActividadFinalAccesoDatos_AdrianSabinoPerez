@@ -1,4 +1,6 @@
 package com.example.actividadfinalaccesodatos_adriansabinoperez.Repository
 
-interface ClienteRepository {
-}
+import com.example.actividadfinalaccesodatos_adriansabinoperez.Entity.Cliente
+import org.springframework.data.mongodb.repository.MongoRepository
+
+interface ClienteRepository : MongoRepository<Cliente, String>

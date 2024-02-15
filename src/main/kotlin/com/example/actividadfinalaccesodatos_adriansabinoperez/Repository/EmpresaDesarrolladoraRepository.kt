@@ -1,4 +1,6 @@
 package com.example.actividadfinalaccesodatos_adriansabinoperez.Repository
 
-interface EmpresaDesarrolladoraRepository {
-}
+import com.example.actividadfinalaccesodatos_adriansabinoperez.Entity.EmpresaDesarrolladora
+import org.springframework.data.mongodb.repository.MongoRepository
+
+interface EmpresaDesarrolladoraRepository : MongoRepository<EmpresaDesarrolladora, String>

@@ -1,4 +1,4 @@
-package com.example.actividadfinalaccesodatos_adriansabinoperez.Entities
+package com.example.actividadfinalaccesodatos_adriansabinoperez.Entity
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
@@ -8,8 +8,8 @@ import java.util.Date
 data class EmpresaDesarrolladora(
         @Id
         val id: String? = null,
-        val nombre: String,
-        val fechaCreacion: Date,
-        val videojuegosCreados: Int,
-        val enActivo: Boolean
+        var nombre: String,
+        var fechaCreacion: Date,
+        var videojuegosCreados: Int,
+        var enActivo: Boolean
 )
