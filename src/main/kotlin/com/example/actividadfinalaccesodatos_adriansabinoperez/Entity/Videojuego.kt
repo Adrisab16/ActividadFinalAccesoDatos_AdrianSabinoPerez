@@ -4,7 +4,6 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
-
 @Document("videojuegos")
 data class Videojuego(
         @Id
@@ -23,8 +22,9 @@ data class Videojuego(
         var fechaPublicacion: String? = null,
 
         @Field("puntuacion")
-        var puntuacion: Int? = null,
+        var puntuacion: String? = null,
 
         @Field("id_empresa")
-        var idEmpresa: Int? = null
+        var idEmpresa: String? = null
 )
+

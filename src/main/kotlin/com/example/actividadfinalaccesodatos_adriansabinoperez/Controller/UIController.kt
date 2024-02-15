@@ -12,8 +12,8 @@ class UIController {
         return "index"
     }
 
-    @GetMapping("/submenu/{operacion}")
+    @GetMapping("/submenus/{operacion}")
     fun mostrarSubMenu(@PathVariable operacion: String): String {
-        return "submenus/" + operacion
+        return "submenus/$operacion"
     }
 }
