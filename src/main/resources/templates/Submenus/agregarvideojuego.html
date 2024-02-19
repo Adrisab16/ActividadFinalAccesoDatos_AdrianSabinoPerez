@@ -1,7 +1,7 @@
 <!-- src/main/resources/templates/agregarVideojuego.html -->
 
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 
 <h2>Agregar Videojuego</h2>
 
-<form method="post" th:action="@{/guardarVideojuego}" th:object="${videojuego}">
+<form method="post" action="http://localhost:8081/videojuegos/guardarVideojuego">
     <label for="id">ID:</label>
     <input type="text" id="id" name="id" required><br>
 
@@ -31,11 +31,10 @@
     <input type="text" id="puntuacion" name="puntuacion" required><br>
 
     <label for="idEmpresa">ID Empresa:</label>
-    <input type="text" id="idEmpresa" name="IDEmpresa" required><br>
+    <input type="text" id="idEmpresa" name="IdEmpresa" required><br>
 
     <button type="reset">Reset</button>
     <button type="submit">Guardar Videojuego</button>
 </form>
-
 </body>
 </html>

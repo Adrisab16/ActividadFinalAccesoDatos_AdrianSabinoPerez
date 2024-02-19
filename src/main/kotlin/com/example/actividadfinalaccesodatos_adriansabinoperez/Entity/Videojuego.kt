@@ -22,7 +22,7 @@ data class Videojuego(
         var fechaPublicacion: String? = null,
 
         @Field("puntuacion")
-        var puntuacion: String? = null,
+        var puntuacion: Int? = null,
 
         @Field("id_empresa")
         var idEmpresa: String? = null

@@ -2,6 +2,7 @@ package com.example.actividadfinalaccesodatos_adriansabinoperez.Controller
 
 import com.example.actividadfinalaccesodatos_adriansabinoperez.Entity.Videojuego
 import com.example.actividadfinalaccesodatos_adriansabinoperez.Service.VideojuegoService
+import org.springframework.http.ResponseEntity
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
@@ -9,8 +10,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes
 @RestController
 @RequestMapping("/videojuegos")
 class VideojuegoController(private val videojuegoService: VideojuegoService) {
-    /*
-    @GetMapping
+
+    @GetMapping("/obtenertodoslosvideojuegos")
     fun obtenerTodosLosVideojuegos(): ResponseEntity<List<Videojuego>> {
         val videojuegos = videojuegoService.obtenerTodosLosVideojuegos()
         return ResponseEntity.ok(videojuegos)
@@ -23,7 +24,7 @@ class VideojuegoController(private val videojuegoService: VideojuegoService) {
 
         return ResponseEntity.ok(videojuego)
     }
-    */
+
 
     @GetMapping("/agregarVideojuego")
     fun mostrarAgregarVideojuego(model: Model): String {
@@ -36,21 +37,22 @@ class VideojuegoController(private val videojuegoService: VideojuegoService) {
         // Lógica para guardar el videojuego en la base de datos
         videojuegoService.guardarVideojuego(videojuego)
 
+        print("Guardado")
+
         // Redirige a donde desees después de guardar
-        return "redirect:/"
+        return "index.html"
     }
 
-    /*
-    @PutMapping("/{id}")
+    @PutMapping("/actualizarVideojuego/{id}")
     fun actualizarVideojuego(@PathVariable id: String, @RequestBody videojuego: Videojuego): ResponseEntity<Videojuego> {
         val videojuegoActualizado = videojuegoService.actualizarVideojuego(id, videojuego)
         return ResponseEntity.ok(videojuegoActualizado)
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminarVideojuego/{id}")
     fun eliminarVideojuego(@PathVariable id: String): ResponseEntity<Void> {
         videojuegoService.eliminarVideojuego(id)
+        print ("Eliminado")
         return ResponseEntity.noContent().build()
     }
-    */
 }
