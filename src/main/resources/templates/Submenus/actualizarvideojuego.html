@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Videojuego</title>
+</head>
+<body>
+
+<h2>Actualizar Videojuego</h2>
+
+<form method="post" action="http://localhost:8081/videojuegos/actualizarVideojuego/{id}">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" required><br>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="desarrolladora">Desarrolladora:</label>
+    <input type="text" id="desarrolladora" name="desarrolladora" required><br>
+
+    <label for="genero">Género:</label>
+    <input type="text" id="genero" name="genero" required><br>
+
+    <label for="fechapublicacion">Fecha de Publicación:</label>
+    <input type="text" id="fechapublicacion" name="fechapublicacion" required><br>
+
+    <label for="puntuacion">Puntuación:</label>
+    <input type="text" id="puntuacion" name="puntuacion" required><br>
+
+    <button type="reset">Reset</button>
+    <button type="submit">Actualizar Videojuego</button>
+</form>
+</body>
+</html>

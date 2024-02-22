@@ -2,14 +2,16 @@ package com.example.actividadfinalaccesodatos_adriansabinoperez.Controller
 
 import com.example.actividadfinalaccesodatos_adriansabinoperez.Entity.Videojuego
 import com.example.actividadfinalaccesodatos_adriansabinoperez.Service.VideojuegoService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
 @RestController
 @RequestMapping("/videojuegos")
-class VideojuegoController(private val videojuegoService: VideojuegoService) {
+class VideojuegoController(@Autowired private val videojuegoService: VideojuegoService) {
 
     @GetMapping("/obtenertodoslosvideojuegos")
     fun obtenerTodosLosVideojuegos(): ResponseEntity<List<Videojuego>> {
@@ -25,6 +27,12 @@ class VideojuegoController(private val videojuegoService: VideojuegoService) {
         return ResponseEntity.ok(videojuego)
     }
 
+    @GetMapping("/mostrarVideojuegos")
+    fun mostrarVideojuegos(model: Model): String {
+        val videojuegos = videojuegoService.obtenerTodosLosVideojuegos()
+        model.addAttribute("videojuegos", videojuegos)
+        return "mostrarVideojuegos"
+    }
 
     @GetMapping("/agregarVideojuego")
     fun mostrarAgregarVideojuego(model: Model): String {
@@ -33,14 +41,11 @@ class VideojuegoController(private val videojuegoService: VideojuegoService) {
     }
 
     @PostMapping("/guardarVideojuego")
-    fun agregarVideojuego(@ModelAttribute("videojuego") videojuego: Videojuego, redirectAttributes: RedirectAttributes): String {
+    fun agregarVideojuego(@ModelAttribute("videojuego") videojuego: Videojuego, redirectAttributes: RedirectAttributes) {
         // Lógica para guardar el videojuego en la base de datos
         videojuegoService.guardarVideojuego(videojuego)
 
         print("Guardado")
-
-        // Redirige a donde desees después de guardar
-        return "index.html"
     }
 
     @PutMapping("/actualizarVideojuego/{id}")
@@ -49,8 +54,11 @@ class VideojuegoController(private val videojuegoService: VideojuegoService) {
         return ResponseEntity.ok(videojuegoActualizado)
     }
 
-    @DeleteMapping("/eliminarVideojuego/{id}")
-    fun eliminarVideojuego(@PathVariable id: String): ResponseEntity<Void> {
+    @DeleteMapping("/eliminarvideojuego/")
+    @Transactional
+
+    fun eliminarVideojuego(@RequestParam id: String): ResponseEntity<Void> {
+        println(id)
         videojuegoService.eliminarVideojuego(id)
         print ("Eliminado")
         return ResponseEntity.noContent().build()

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Videojuego</title>
+</head>
+<body>
+
+<h2>Detalles del Videojuego</h2>
+
+<form method="get" action="http://localhost:8081/videojuegos/{id}">
+    <label for="id">ID del Videojuego:</label>
+    <input type="text" id="id" name="id" required>
+    <button type="submit">Buscar Videojuego</button>
+</form>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Desarrolladora</th>
+        <th>Género</th>
+        <th>Fecha de Publicación</th>
+        <th>Puntuación</th>
+        <th>ID Empresa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td id="videojuegoId"></td>
+        <td id="videojuegoNombre"></td>
+        <td id="videojuegoDesarrolladora"></td>
+        <td id="videojuegoGenero"></td>
+        <td id="videojuegoFechaPublicacion"></td>
+        <td id="videojuegoPuntuacion"></td>
+        <td id="videojuegoIdEmpresa"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+

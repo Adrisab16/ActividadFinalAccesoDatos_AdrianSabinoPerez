@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="videojuego : ${videojuegos}">
+    <p>ID: <span th:text="${videojuego.id}"></span></p>
+    <p>Nombre: <span th:text="${videojuego.nombre}"></span></p>
+    <p>Desarrolladora: <span th:text="${videojuego.empresaDesarrolladora}"></span></p>
+    <p>Género: <span th:text="${videojuego.genero}"></span></p>
+    <p>Fecha de Publicación: <span th:text="${videojuego.fechaPublicacion}"></span></p>
+    <p>Puntuación: <span th:text="${videojuego.puntuacion}"></span></p>
+    <p>ID Empresa: <span th:text="${videojuego.idEmpresa}"></span></p>
+    <hr>
+</div>
+</body>
+</html>
