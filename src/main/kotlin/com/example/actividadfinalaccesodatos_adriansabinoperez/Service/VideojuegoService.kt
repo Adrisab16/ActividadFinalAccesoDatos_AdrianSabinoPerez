@@ -7,11 +7,6 @@ import java.util.*
 
 @Service
 class VideojuegoService(private val videojuegoRepository: VideojuegoRepository) {
-
-    fun obtenerTodosLosVideojuegos(): List<Videojuego> {
-        return videojuegoRepository.findAll()
-    }
-
     fun obtenerVideojuegoPorId(id: String): Optional<Videojuego> {
         return videojuegoRepository.findById(id)
     }
@@ -28,7 +23,6 @@ class VideojuegoService(private val videojuegoRepository: VideojuegoRepository) 
         videojuegoExistente.nombre = nuevoVideojuego.nombre
         videojuegoExistente.empresaDesarrolladora = nuevoVideojuego.empresaDesarrolladora
         videojuegoExistente.genero = nuevoVideojuego.genero
-        videojuegoExistente.fechaPublicacion = nuevoVideojuego.fechaPublicacion
         videojuegoExistente.puntuacion = nuevoVideojuego.puntuacion
         videojuegoExistente.idEmpresa = nuevoVideojuego.idEmpresa
 

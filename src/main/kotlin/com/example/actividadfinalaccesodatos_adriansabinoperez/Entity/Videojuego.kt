@@ -18,9 +18,6 @@ data class Videojuego(
         @Field("genero")
         var genero: String? = null,
 
-        @Field("fecha_publicacion")
-        var fechaPublicacion: String? = null,
-
         @Field("puntuacion")
         var puntuacion: Int? = null,
 

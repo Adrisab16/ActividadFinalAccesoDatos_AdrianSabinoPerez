@@ -9,36 +9,11 @@
 
 <h2>Detalles del Videojuego</h2>
 
-<form method="get" action="http://localhost:8081/videojuegos/{id}">
+<form method="get" action="http://localhost:8081/videojuegos/obtenerVideojuego/">
     <label for="id">ID del Videojuego:</label>
     <input type="text" id="id" name="id" required>
     <button type="submit">Buscar Videojuego</button>
 </form>
-
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Desarrolladora</th>
-        <th>Género</th>
-        <th>Fecha de Publicación</th>
-        <th>Puntuación</th>
-        <th>ID Empresa</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td id="videojuegoId"></td>
-        <td id="videojuegoNombre"></td>
-        <td id="videojuegoDesarrolladora"></td>
-        <td id="videojuegoGenero"></td>
-        <td id="videojuegoFechaPublicacion"></td>
-        <td id="videojuegoPuntuacion"></td>
-        <td id="videojuegoIdEmpresa"></td>
-    </tr>
-    </tbody>
-</table>
 
 </body>
 </html>
