@@ -3,6 +3,7 @@ package com.example.actividadfinalaccesodatos_adriansabinoperez.Controller
 import com.example.actividadfinalaccesodatos_adriansabinoperez.Entity.Videojuego
 import com.example.actividadfinalaccesodatos_adriansabinoperez.Service.VideojuegoService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.*
@@ -11,7 +12,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes
 @RestController
 @RequestMapping("/videojuegos")
 class VideojuegoController(@Autowired private val videojuegoService: VideojuegoService) {
-
 
     @GetMapping("/obtenerVideojuego/")
     fun obtenerVideojuegoPorId(@RequestParam id: String): ResponseEntity<Videojuego> {
@@ -29,11 +29,12 @@ class VideojuegoController(@Autowired private val videojuegoService: VideojuegoS
         print("Guardado")
     }
 
-    @PutMapping("/actualizarVideojuego/")
-    fun actualizarVideojuego(@RequestParam id: String, @RequestBody videojuego: Videojuego): ResponseEntity<Videojuego> {
+    @PutMapping(path = ["/actualizarVideojuego"], consumes = [MediaType.APPLICATION_FORM_URLENCODED_VALUE])
+    fun actualizarVideojuego(@RequestParam id: String, videojuego: Videojuego): ResponseEntity<Videojuego> {
         val videojuegoActualizado = videojuegoService.actualizarVideojuego(id, videojuego)
         return ResponseEntity.ok(videojuegoActualizado)
     }
+
 
     @DeleteMapping("/eliminarvideojuego/")
     @Transactional

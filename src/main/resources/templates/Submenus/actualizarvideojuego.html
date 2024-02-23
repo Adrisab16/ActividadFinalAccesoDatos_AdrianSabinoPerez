@@ -9,7 +9,7 @@
 
 <h2>Actualizar Videojuego</h2>
 
-<form method="post" action="http://localhost:8081/videojuegos/actualizarVideojuego/">
+<form method="post" action="http://localhost:8081/videojuegos/actualizarVideojuego" enctype="application/x-www-form-urlencoded">
     <input type="hidden" name="_method" value="put">
     <label for="id">ID:</label>
     <input type="text" id="id" name="id" required><br>
@@ -26,8 +26,12 @@
     <label for="puntuacion">Puntuación:</label>
     <input type="text" id="puntuacion" name="puntuacion" required><br>
 
+    <label for="idEmpresa">ID Empresa:</label>
+    <input type="text" id="idEmpresa" name="IdEmpresa" required><br>
+
     <button type="reset">Reset</button>
     <button type="submit">Actualizar Videojuego</button>
 </form>
+
 </body>
 </html>
