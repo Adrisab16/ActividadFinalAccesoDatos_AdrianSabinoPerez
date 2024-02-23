@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Eliminar Videojuego</h2>
+
+<form method="post" action="http://localhost:8081/clientes/eliminarCliente/">
+    <input type="hidden" name="_method" value="delete">
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni" required><br>
+
+    <button type="reset">Reset</button>
+    <button type="submit">Eliminar Cliente</button>
+</form>
+</body>
+</html>

@@ -7,11 +7,6 @@ import java.util.*
 
 @Service
 class ClienteService(private val clienteRepository: ClienteRepository) {
-
-    fun obtenerTodosLosClientes(): List<Cliente> {
-        return clienteRepository.findAll()
-    }
-
     fun obtenerClientePorDNI(dni: String): Optional<Cliente> {
         return clienteRepository.findById(dni)
     }
@@ -28,7 +23,6 @@ class ClienteService(private val clienteRepository: ClienteRepository) {
         clienteExistente.nombre = nuevoCliente.nombre
         clienteExistente.apellidos = nuevoCliente.apellidos
         clienteExistente.edad = nuevoCliente.edad
-        clienteExistente.codigoPostal = nuevoCliente.codigoPostal
         clienteExistente.direccion = nuevoCliente.direccion
 
         return clienteRepository.save(clienteExistente)

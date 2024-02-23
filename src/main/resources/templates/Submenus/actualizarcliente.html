@@ -1,17 +1,17 @@
-<!-- src/main/resources/templates/agregarVideojuego.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Cliente</title>
+    <title>Actualizar Videojuego</title>
 </head>
 <body>
 
-<h2>Agregar Cliente</h2>
+<h2>Actualizar Cliente</h2>
 
-<form method="post" action="http://localhost:8081/clientes/guardarCliente">
+<form method="post" action="http://localhost:8081/clientes/actualizarCliente" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_method" value="put">
+
     <label for="dni">DNI:</label>
     <input type="text" id="dni" name="dni" required><br>
 
@@ -28,7 +28,8 @@
     <input type="text" id="direccion" name="direccion" required><br>
 
     <button type="reset">Reset</button>
-    <button type="submit">Guardar Cliente</button>
+    <button type="submit">Actualizar Cliente</button>
 </form>
+
 </body>
 </html>
