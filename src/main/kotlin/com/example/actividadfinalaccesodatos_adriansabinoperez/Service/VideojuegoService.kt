@@ -21,7 +21,6 @@ class VideojuegoService(private val videojuegoRepository: VideojuegoRepository) 
 
         // Actualizar propiedades del videojuego existente con las del nuevo videojuego
         videojuegoExistente.nombre = nuevoVideojuego.nombre
-        videojuegoExistente.empresaDesarrolladora = nuevoVideojuego.empresaDesarrolladora
         videojuegoExistente.genero = nuevoVideojuego.genero
         videojuegoExistente.puntuacion = nuevoVideojuego.puntuacion
         videojuegoExistente.idEmpresa = nuevoVideojuego.idEmpresa

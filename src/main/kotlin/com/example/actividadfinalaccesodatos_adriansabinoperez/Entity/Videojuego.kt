@@ -12,9 +12,6 @@ data class Videojuego(
         @Field("nombre")
         var nombre: String? = null,
 
-        @Field("empresa_desarrolladora")
-        var empresaDesarrolladora: String? = null,
-
         @Field("genero")
         var genero: String? = null,
 
