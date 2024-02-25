@@ -4,6 +4,15 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
+/**
+ * Entidad que representa un videojuego en la base de datos MongoDB.
+ *
+ * @property id Identificador único del videojuego.
+ * @property nombre Nombre del videojuego.
+ * @property genero Género del videojuego.
+ * @property puntuacion Puntuación del videojuego.
+ * @property idEmpresa Identificador único de la empresa desarrolladora del videojuego.
+ */
 @Document("videojuegos")
 data class Videojuego(
         @Id
